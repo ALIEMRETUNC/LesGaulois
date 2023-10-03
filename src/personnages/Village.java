@@ -29,8 +29,13 @@ public class Village {
 	}
 	public void afficherVillageois() {
 		System.out.println("Dans village du chef " +chef.getNom()+" vivent les légendaires gaulois :");
-		System.out.println("-" + trouverHabitant(0).getNom());
-		System.out.println("-" + trouverHabitant(1).getNom() );
+		if (nbVillageois > 0) {
+            for (int i = 0; i < nbVillageois; i++) {
+                System.out.println("-"+villageois[i].getNom());
+            }
+        } else {
+            System.out.println("Pas de villageois.");
+        }
 	}
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles",30);
